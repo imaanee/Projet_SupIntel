@@ -1,0 +1,47 @@
+
+@namespace Components
+
+<p>Valeur du pourcentage : @percentage %</p>
+
+<p id="dateStart" style="width:500px; display:flex; justify-content:space-between">@DateStart.Date.ToString("dd/MM/yyyy") <span> @DateEnd.Date.ToString("dd/MM/yyyy")</span> </p>
+
+<div id="content" style="width:500px; height : 15px; border:1px solid #DCDCDC; background-color:#DCDCDC">
+
+
+    <div style="width: @percentage%; height : 14px; background-color:@color ;">  </div>
+    
+</div>
+
+@code {
+    
+	private int percentage ;
+
+    private String? color ;
+	
+	[Parameter]
+    public DateTime DateStart {get; set;}
+
+    [Parameter]
+    public DateTime DateEnd {get; set;}
+
+    private DateTime Today = DateTime.Now; 
+
+    protected override void OnInitialized() {
+
+        percentage = (int)(( (Today.Date - DateStart.Date) / (DateEnd.Date - DateStart.Date) ) * 100);
+
+        if (percentage < 50 ) {
+            color = "#77CF3D";
+        }
+
+        else if(50 <= percentage && percentage < 80 ) {
+            color = "#FE9D11";
+        }
+
+        else {
+            color = "#F72323";
+        }
+    }
+
+	
+}
