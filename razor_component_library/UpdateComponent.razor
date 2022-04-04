@@ -26,6 +26,11 @@
     private DateTime Today = DateTime.Now; 
 
     protected override void OnInitialized() {
+        
+        if (DateEnd < DateStart) throw new ArgumentException("end date cannot be less than start date");
+        if ( (DateEnd > DateStart) && (DateEnd < DateTime.Now) ) throw new ArgumentException("end date cannot be less than today date");
+        if (DateStart > DateTime.Now) throw new ArgumentException("start date cannot be higher than today date");
+        if (DateStart == DateEnd) throw new ArgumentException("start date cannot be equal to end date");
 
         percentage = (int)(( (Today.Date - DateStart.Date) / (DateEnd.Date - DateStart.Date) ) * 100);
 
