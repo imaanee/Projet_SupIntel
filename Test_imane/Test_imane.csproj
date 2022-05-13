@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bunit" Version="1.6.4" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.1.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+  <PackageReference Include="MSTest.TestAdapter" Version="2.1.1" />
+  <PackageReference Include="MSTest.TestFramework" Version="2.1.1" />
+  <PackageReference Include="coverlet.collector" Version="1.3.0" />
+  </ItemGroup>
+
+
+  
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\razor_component_library\razor_component_library.csproj" />
+  </ItemGroup>
+
+  
+
+</Project>
+
+
+<!-- <ItemGroup>
+    <Reference Include="mscorlib"> -->
+      <!-- Replace with whatever your path to mscorlib is -->
+      <!-- <HintPath>$C:\Windows\Microsoft.NET\Framework\v2.0.50727\mscorlib.dll</HintPath>
+    </Reference>
+  </ItemGroup> -->
